@@ -8,7 +8,7 @@ var router = express.Router();
 
 //var streamHandler = require('./streamhandler');
 //var Tweet = require('./models/tweet');
-/*
+
 var twit = new twitter({
   consumer_key: 'dteOV9HkUj0x7xW7OzPUcJ4lb', // <--- FILL ME IN
   consumer_secret: 'xn4UTRj7be5DHIVSqlI65lULb3TjrKzST5aD4ywIUSJgskrM9e', // <--- FILL ME IN
@@ -22,10 +22,10 @@ twit.stream('statuses/filter', {
   streamHandler(stream);
 });
 
- GET home page. */
+ GET home page.
 router.get('/', function(req, res, next) {
   res.render('index', {
-    title: 'TheGeekAngel\'s social &hearts; wall TheGeekAngel\'s'
+    title: 'TheIoTFestival\'s social &hearts; wall TheIoTFestival\'s'
   });
 });
 /*
