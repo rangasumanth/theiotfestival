@@ -10,14 +10,14 @@ var streamHandler = require('./streamhandler');
 var Tweet = require('./models/tweet');
 
 var twit = new twitter({
-  consumer_key: 'dteOV9HkUj0x7xW7OzPUcJ4lb', // <--- FILL ME IN
-  consumer_secret: 'xn4UTRj7be5DHIVSqlI65lULb3TjrKzST5aD4ywIUSJgskrM9e', // <--- FILL ME IN
-  access_token_key: '590688831-ZtYu3G0LAsNjdHBrQq8TIAkiTvVPjQ2FnM2MQhT0', // <--- FILL ME IN
-  access_token_secret: '1rEqY669AkSFChZlt8l9wBhbDkV2CZeYS7HUp1R50f9BA' // <--- FILL ME IN
+  consumer_key: 'b817l7p80PPyMNaGPhThzSu1a', // <--- FILL ME IN
+  consumer_secret: 'LYVbcNXFWHZCwbWdThXgPII2ouuNMHKdPgEUAsfVfIUCixipZ5', // <--- FILL ME IN
+  access_token_key: '767765431641788417-QMgywY59lm0WnCvRA4BOMBFRsMAiSxi', // <--- FILL ME IN
+  access_token_secret: 'Uo03XBYjo8hZUuatFmkIY0PwDuzWCJEXyOxxZ3OFQNqEH' // <--- FILL ME IN
 });
 
 twit.stream('statuses/filter', {
-  track: 'theaugustfest, #TheAugustFest'
+  track: 'theiotfestival, #TheIoTFestival'
 }, function(stream) {
   streamHandler(stream);
 });
