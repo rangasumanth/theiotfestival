@@ -39,7 +39,7 @@ router.post('/messages', function(req, res) {
       next_request: {
         sources: [{
           'twitter.Search': {
-            query: "#TheAugustFest",
+            query: "#TheIoTFestival",
             since_id: "",
             count: 100
           }
@@ -66,15 +66,15 @@ router.get('/config', function(req, res, next) {
 		pictures_only:false,
 		api_request:{
 			sources:[
-				{"twitter.Search":{query:"#thegeekangels",count:100}},
-				{"instagram.TagMedia":{tag:"thegeekangels",count:30}}
+				{"twitter.Search":{query:"#TheIoTFestival",count:100}},
+				{"instagram.TagMedia":{tag:"theiotfesitval",count:30}}
 		      ],
 			  filters:[{ExcludeRetweets:{}}]
 			}
 		}
 	}
    ,view:{type:"beam.view.classic.ClassicView",
-	   classic:{message_tag: "TheGeekAngels",
+	   classic:{message_tag: "TheIoTFestival",
 		   show_instagram_logo:true,
 		    message_prefix:"Tag your posts with",
 			fake_swaps:true,
