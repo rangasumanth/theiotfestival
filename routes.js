@@ -8,7 +8,7 @@ var router = express.Router();
 
 //var streamHandler = require('./streamhandler');
 //var Tweet = require('./models/tweet');
-/*
+
 var twit = new twitter({
   consumer_key: 'dteOV9HkUj0x7xW7OzPUcJ4lb', // <--- FILL ME IN
   consumer_secret: 'xn4UTRj7be5DHIVSqlI65lULb3TjrKzST5aD4ywIUSJgskrM9e', // <--- FILL ME IN
@@ -22,13 +22,13 @@ twit.stream('statuses/filter', {
   streamHandler(stream);
 });
 
- GET home page. */
+ GET home page. 
 router.get('/', function(req, res, next) {
   res.render('index', {
     title: 'TheGeekAngel\'s social &hearts; wall TheGeekAngel\'s'
   });
 });
-/*
+
 router.post('/messages', function(req, res) {
   //console.log(req.body);
   // Set a stream listener for tweets matching tracking keywords
@@ -55,9 +55,9 @@ router.post('/messages', function(req, res) {
   //res.sendFile(path.join(__dirname + '/messages.json'));
 
 });
-*/
 
-/* GET config . */
+
+ GET config . 
 router.get('/config', function(req, res, next) {
   res.json(
 {messageprovider:{
