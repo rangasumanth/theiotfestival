@@ -6,8 +6,8 @@ var mongoose = require('mongoose');
 var router = express.Router();
 
 
-//var streamHandler = require('./streamhandler');
-//var Tweet = require('./models/tweet');
+var streamHandler = require('./streamhandler');
+var Tweet = require('./models/tweet');
 
 var twit = new twitter({
   consumer_key: 'dteOV9HkUj0x7xW7OzPUcJ4lb', // <--- FILL ME IN
@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
     title: 'TheIoTFestival\'s social &hearts; wall TheIoTFestival\'s'
   });
 });
-/*
+
 router.post('/messages', function(req, res) {
   //console.log(req.body);
   // Set a stream listener for tweets matching tracking keywords
@@ -55,7 +55,7 @@ router.post('/messages', function(req, res) {
   //res.sendFile(path.join(__dirname + '/messages.json'));
 
 });
-*/
+
 
 /* GET config . */
 router.get('/config', function(req, res, next) {
