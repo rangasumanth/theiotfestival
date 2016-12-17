@@ -1,0 +1,110 @@
+html
+  body
+    div
+      // wrapper so jquery .find works
+      #ui-overlay
+        .ui-main.collide
+          //
+           .ui-block.ui-header.ui-block-parent.hide-fullscreen
+            .ui-block-white
+              a(href='http://www.tweetbeam.com', target='_blank')
+                img.logo(src='http://www.tweetbeam.com/resources/img/tweetbeam_122_60.jpg')
+              a.btn-fullscreen.right(href='#')
+             // 
+              a.btn-info-toggle.right.hide-licensed(href='#')
+          .ui-tag.ui-block
+            | {{#show_twitter_bird}}
+            object.bird(data='data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIzMjggMzU1IDMzNSAyNzYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iCiAgICBNIDYzMCwgNDI1CiAgICBBIDE5NSwgMTk1IDAgMCAxIDMzMSwgNjAwCiAgICBBIDE0MiwgMTQyIDAgMCAwIDQyOCwgNTcwCiAgICBBICA3MCwgIDcwIDAgMCAxIDM3MCwgNTIzCiAgICBBICA3MCwgIDcwIDAgMCAwIDQwMSwgNTIxCiAgICBBICA3MCwgIDcwIDAgMCAxIDM0NCwgNDU1CiAgICBBICA3MCwgIDcwIDAgMCAwIDM3MiwgNDYwCiAgICBBICA3MCwgIDcwIDAgMCAxIDM1NCwgMzcwCiAgICBBIDE5NSwgMTk1IDAgMCAwIDQ5NSwgNDQyCiAgICBBICA2NywgIDY3IDAgMCAxIDYxMSwgMzgwCiAgICBBIDExNywgMTE3IDAgMCAwIDY1NCwgMzYzCiAgICBBICA2NSwgIDY1IDAgMCAxIDYyMywgNDAxCiAgICBBIDExNywgMTE3IDAgMCAwIDY2MiwgMzkwCiAgICBBICA2NSwgIDY1IDAgMCAxIDYzMCwgNDI1CiAgICBaIgogICAgc3R5bGU9ImZpbGw6IzNCQTlFRTsiLz4KPC9zdmc+', type='image/svg+xml')
+            |                 {{/show_twitter_bird}}
+            |                 {{#show_instagram_logo}}
+            img.instagram-logo.provider-logo(src='http://www.tweetbeam.com/resources/beam/view/classic/res/instagram_medium.png')
+            |                 {{/show_instagram_logo}}
+            |                 {{#message_custom}}
+            span {{message_custom}}
+            |                 {{/message_custom}}
+            |                 {{^message_custom}}
+            span
+              | {{message_prefix}} 
+              strong &#x23;{{message_tag}}
+            |                 {{/message_custom}}
+         // 
+          .ui-info.ui-block.ui-block-content.hide-fullscreen.hide-licensed.hide-mobile
+            a.btn-info-toggle.btn-close(href='#', style='display:none')
+            h3.firsth Get TweetBeam
+            p Use TweetBeam as a social media visualization at your event or office:
+            ul.list-arrow(style='margin-top:0.5em')
+              li Engage your attendees
+              li Turn your event into an interactive experience
+              li Generate brand exposure
+              li Tweets are loaded real-time
+              li Instagram support available
+              li Complete moderation
+            p(style='text-align:center')
+              a.btn.btn-success.btn-lg(href='/pricing?ref=show') Buy now »
+            //
+              <h3>Customize</h3>
+              <p>Create a Twitter Wall for any topic, event, or login and visualize your personal Twitter timeline</p>
+              <ul class="list-arrow">
+              <li><a href="http://www.tweetbeam.com" target="_blank">Visit TweetBeam.com</a></li>
+              </ul>
+            h3.hide-mobile Share
+            p.hide-mobile Share this show with your friends:
+            ul.social-buttons.clearfix.hide-mobile
+              li.share-twitter
+                a.twitter-share.socialite(href='https://twitter.com/share', data-text='Check out this Twitter Wall', data-via='TweetBeam', data-count='none', rel='nofollow') Tweet
+              li.share-fblike
+                .facebook-like.socialite(data-width='57', data-layout='button')
+              li.share-gplus
+                .googleplus-one.socialite(data-size='medium', data-annotation='none')
+            //
+              <h3>Terms of use</h3>
+              <p>Free for non-commercial private (non-broadcast) use in a home setting. Work with us to tailor TweetBeam to your brand or event</p>
+              <ul class="list-arrow">
+              <li><a href="http://www.tweetbeam.com/commercial?ref=free_link_learn" target="_blank">Learn more</a></li>
+              </ul>
+        //
+          <div class="ui-credits show-fullscreen collide">
+          <table>
+          <tr>
+          <td style="padding-bottom:8px">
+          <div class="ui-block ui-header ui-block-parent stretch-width">
+          <div class="ui-block-white stretch-width">
+          <table class="stretch-width">
+          <tr>
+          <td style="width:34%;display:table-cell">
+          <object data="http://www.tweetbeam.com/resources/img/tweetbeam.svg"></object>
+          </td>
+          <td style="padding-left:10%;vertical-align:middle;display: table-cell">
+          <object data="http://www.tweetbeam.com/resources/beam/view/classic/res/poweredby.svg"></object>
+          </td>
+          </tr>
+          </table>
+          </div>
+          </div>
+          </td>
+          </tr>
+          <tr class="ui-license">
+          <td>
+          <div class="ui-block ui-block-content">
+          <a href="http://www.tweetbeam.com/commercial?ref=free_link_fs_close" target="_blank" class="btn-close"></a>
+          <p><a href="http://www.tweetbeam.com/commercial?ref =free_link_fs" target="_blank">Free version: for private use</a></p>
+          </div>
+          </td>
+          </tr>
+          </table>
+          </div>
+        .ui-fullscreen-tip.hide-fullscreen.ui-block
+          p Press F11 or use your browser menu to go full screen
+        // progress indicator templates
+        .progress-container.progress-loading
+          .progress-message
+            | Loading messages
+          .progress-indicator-gif
+        // this says "Tweets" wich might be wrong for other messageProviders
+        .progress-container.progress-no-messages
+          .progress-message
+            | No messages available (yet), we'll keep on monitoring Twitter and display new tweets as soon as they come in.
+            small
+              | Are you sure there are Tweets matching your search? 
+              a(href='http://www.tweetbeam.com/commercial?ref=no_messages', target='_blank') Get in touch to let us help setting up your show.
+          .progress-indicator-gif

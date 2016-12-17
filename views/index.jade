@@ -1,0 +1,146 @@
+doctype html
+html(lang='en')
+  head
+    meta(content='IE=edge', http-equiv='X-UA-Compatible')
+    meta(charset='utf-8')
+    meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no', name='viewport')
+    meta(content='yes', name='apple-mobile-web-app-capable')
+    title '#IoTHackDay' IoT HackDay Social &hearts; Wall by Balamurali Pandranki
+    meta(content="'#IoTHackDay' IoT HackDay Social &hearts; Wall by Balamurali Pandranki")
+    meta(content='website')
+    meta(content='http://social-love.iothackday.in/')
+    meta(content='http://www.tweetbeam.com/resources/img/repbg_blur_purple.jpg')
+    meta(content='TweetBeam')
+    meta(content='696106101')
+    meta(content='A unique visualization of live twitter updates of IoT HackDay. Capture the feeling of IoT HackDay.')
+    meta(content='A unique visualization of live twitter updates of IoT HackDay. Capture the feeling of IoT HackDay.', name='description')
+    meta(content='notranslate', name='google')
+    link(href='//cdn.tweetbeam.com/resources/css/tbc2a.css?v=2', rel='stylesheet')
+    script(src='//cdn.tweetbeam.com/resources/js/scripts.js?v=4')
+    link(href='//fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,700italic,400,300,600,700', rel='stylesheet', type='text/css')
+    link(href='//cdn.tweetbeam.com/resources/beam/view/base.css', rel='stylesheet')
+    link(href='http://www.tweetbeam.com/resources/beam/view/classic/ClassicView.css?v=1437559935000', rel='stylesheet')
+    //if lt IE 9
+      script.
+        var loc = window.location.href;
+        if(loc.indexOf('?') == -1) {
+        loc += '?';
+        } else {
+        loc += '&amp;'
+        }
+        loc += 'o=true';
+        window.location.replace(loc);
+    // [if gte IE 9] <!
+    script(src='vendor/bowser/bowser.min.js')
+    script(src='vendor/jquery/dist/jquery.min.js')
+    script(src='vendor/jquery-color/jquery.color.js')
+    script(src='//cdn.tweetbeam.com/resources/beam/lib/jquery-ui-easings.js')
+    script(src='vendor/gsap/src/minified/TimelineLite.min.js')
+    script(src='vendor/gsap/src/minified/TweenLite.min.js')
+    script(src='vendor/jquery.transit/jquery.transit.js')
+    script(src='vendor/mustache.js/mustache.min.js')
+    script(src='vendor/socialite-js/socialite.min.js')
+    script(src='javascripts/twitter-text.js')
+    script.
+      if($ && $.gsap && typeof $.gsap.enabled === 'function') {
+      $.gsap.enabled(false);
+      }
+      if (!$.support.transition) {
+      $.fn.transition = $.fn.animate;
+      }
+    script(src='javascripts/beam.js')
+    script.
+      var settingsLocation = "/config?query=%23TheAugustFest&json=true";
+      window.onload = function() {
+      beam.App.ROOT = "/";
+      window.app = new beam.App(settingsLocation);
+      };
+    // <![endif]
+  body.beam
+    .beam-loading
+      p(style='margin:5px 10px')
+        | Loading 
+        | TheAugustFest Social Wall
+        | ...
+    script.
+      var query = "#TheAugustFest";
+      function continueFree() {
+      if(false && query && query.length && readCookie('uid_long') == null) {
+      $('.modal-content-c2a').hide();
+      $('.modal-content-signin').show();
+      } else {
+      hideModal();
+      }
+      }
+      function hideModal() {
+      $('.modal').hide();
+      $('.modal-backdrop').remove();
+      intervalId = setInterval(after5Min,1000*60*5);
+      }
+      function showModal() {
+      $('.modal').show();
+      $('.modal-content-c2a').show();
+      $('.modal-content-signin').hide();
+      $(document.body).append('<div class="modal-backdrop fade in"><\\/div>');
+      clearInterval(intervalId);
+      }
+    #modal.modal.fade.in.modal-c2a
+      .modal-dialog.modal-lg
+        .modal-content.modal-content-c2a
+          .modal-header
+            h1.modal-title
+              | Great to see you like
+              | TweetBeam!
+          .modal-body
+            //
+             .c2a-side.clearfix
+               img(src='//cdn.tweetbeam.com/resources/gallery/ernst_young_1_550_390.jpg')
+            .c2a-main.clearfix
+              p(style='margin-top:0')
+                | Join hundreds of organizations
+                | world-wide (ranging from local community events to
+                | Fortune 500 companies) and get a licensed TweetBeam
+                | show for your event or company.
+              .c2a(style='margin-bottom:10px;text-align:center')
+                .form-group
+                  form(action='/pricing?ref=showc2a', method='post')
+                    button.btn.btn-lg.btn-success(style='font-weight:bold;', type='submit')
+                      | License your TweetBeam show
+                      | »
+              p(style='margin-bottom:0;margin-top:3em')
+                a.btn.btn-default(href='', onclick='continueFree();return false;')
+                  | Continue using the free
+                  | evaluation version (not for events) »
+                small(style='padding:10px 5px 0 0')
+                  a(href='/terms', rel='nofollow', target='_blank')
+                    | View terms of
+                    | use
+        .modal-content.modal-content-signin
+          .modal-header
+            h1.modal-title Sign in to TweetBeam
+          .modal-body
+            .c2a-side.clearfix
+              img(src='//cdn.tweetbeam.com/resources/gallery/ernst_young_1_550_390.jpg')
+            .c2a-main.clearfix
+              p(style='margin-top:0')
+                | Please 
+                a(href='/login?new_show_search=%23awesome', onclick="ga('send', 'event', 'showc2a', 'login');ga('b.send', 'event', 'showc2a', 'login');")
+                  | sign in with Twitter
+                |  to continue your TweetBeam
+                |                         show.
+              .c2a(style='margin-bottom:10px;text-align:center')
+                p(style='font-size:12px')
+                  a(href='', onclick='noTwitter();return false;', style='color:#ccc') Don't have a Twitter account?
+              div(style='font-size:12px')
+                p
+                  | Join more than 15.000 users by creating a free
+                  | account, and get access to your personal dashboard
+                  | where you can:
+                ul
+                  li
+                    | Add and manage your own TweetBeam
+                    | shows
+                  li Access advanced configuration options
+                  li
+                    | Visualize your personal Twitter timeline
+                    | (Tweets of your friends)
