@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/messages', function(req, res) {
-  //console.log(req.body);
+  console.log(req.body);
   // Set a stream listener for tweets matching tracking keywords
   // Call static model method to get tweets in the db
   Tweet.getTweets(function(tweets) {
@@ -52,12 +52,12 @@ router.post('/messages', function(req, res) {
       messages: [tweets]
     });
   });
-  //res.sendFile(path.join(__dirname + '/messages.json'));
+  res.sendFile(path.join(__dirname + '/messages.json'));
 
 });
 
 
-/* GET config . */
+GET config . 
 router.get('/config', function(req, res, next) {
   res.json(
 {messageprovider:{
