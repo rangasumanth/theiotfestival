@@ -66,8 +66,8 @@ router.get('/config', function(req, res, next) {
 		pictures_only:false,
 		api_request:{
 			sources:[
-				{"twitter.Search":{query:"#therobofest",count:100}},
-				{"instagram.TagMedia":{tag:"therobofest",count:30}}
+				{"twitter.Search":{query:"#TheRobofest",count:100}},
+				{"instagram.TagMedia":{tag:"TheRobofest",count:30}}
 		      ],
 			  filters:[{ExcludeRetweets:{}}]
 			}
